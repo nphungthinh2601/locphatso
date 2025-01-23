@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: "Museo Moderno", "Segoe UI", system-ui, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+/* For the terms of use modal */
+.prose {
+  max-width: 65ch;
+  color: inherit;
+}
+
+.prose h3 {
+  color: #f97316;
+}
+
+.dark .prose h3 {
+  color: #ff4d4d;
+}
+
+.prose p {
+  margin-bottom: 1.25em;
+}
+
+.dark .prose {
+  color: #e5e7eb;
+}
+
+/* Update dark mode color variables for more consistency */
+.dark {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #121212;
+  --bg-tertiary: #1a1a1a;
+  --accent-color: #ff3333;
+  --accent-hover: #ff0000;
+  --text-primary: #ffffff;
+  --text-secondary: #cccccc;
+}
+
+.dark body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+}
+
+.dark .bg-gray-900,
+.dark .bg-orange-50 {
+  background-color: var(--bg-primary) !important;
+}
+
+.dark .bg-gray-800,
+.dark .bg-white {
+  background-color: var(--bg-secondary) !important;
+}
+
+.dark .bg-gray-700,
+.dark .bg-orange-100 {
+  background-color: var(--bg-tertiary) !important;
+}
+
+.dark .text-orange-400,
+.dark .text-orange-500,
+.dark .text-orange-600 {
+  color: var(--accent-color) !important;
+}
+
+.dark .hover\:bg-orange-600:hover {
+  background-color: var(--accent-hover) !important;
+}
+
+.dark .bg-orange-500 {
+  background-color: var(--accent-color) !important;
+}
+
+.dark .hover\:text-orange-400:hover {
+  color: var(--accent-color) !important;
+}
+
