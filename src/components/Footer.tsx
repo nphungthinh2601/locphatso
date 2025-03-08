@@ -159,11 +159,11 @@ const Footer = () => {
           <div className='flex items-center mb-4 md:mb-0'>
             <img
               src='/images/vndevlabs_500-500.png'
-              alt='VN Dev Labs Logo'
+              alt='VNDev Labs Logo'
               className='w-8 h-8 rounded-full mr-2'
             />
             <span className='text-sm text-gray-400'>
-              Phát triển bởi VN Dev Labs
+              Phát triển bởi VNDev Labs
             </span>
           </div>
           <p className='text-sm text-gray-500'>

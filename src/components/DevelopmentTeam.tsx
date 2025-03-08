@@ -4,7 +4,7 @@ const DevelopmentTeam = () => {
       <div className='container mx-auto max-w-6xl px-4'>
         <div className='text-center mb-16'>
           <h2 className='text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4'>
-            Phát Triển Bởi VN Dev Labs
+            Phát Triển Bởi VNDev Labs
           </h2>
           <p className='text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto'>
             Đội ngũ chuyên nghiệp với tâm huyết phát triển ứng dụng chất lượng
@@ -17,7 +17,7 @@ const DevelopmentTeam = () => {
               <div className='absolute -inset-1 bg-orange-500 dark:bg-[#ff3333] rounded-full blur-md opacity-75'></div>
               <img
                 src='/images/vndevlabs_500-500.png'
-                alt='VN Dev Labs Logo'
+                alt='VNDev Labs Logo'
                 className='relative w-48 h-48 md:w-64 md:h-64 rounded-full object-cover border-4 border-white dark:border-[#0a0a0a]'
               />
             </div>

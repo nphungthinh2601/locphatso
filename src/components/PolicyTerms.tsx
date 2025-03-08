@@ -74,22 +74,22 @@ const PolicyTerms = () => {
     {
       id: 'intellectual',
       title: '2. Quyền Sở Hữu Trí Tuệ',
-      content: `Ứng dụng Lộc Phát Số và tất cả nội dung, bao gồm nhưng không giới hạn ở văn bản, hình ảnh, logo, và phần mềm, thuộc sở hữu của VN Dev Labs và được bảo vệ bởi luật sở hữu trí tuệ.`,
+      content: `Ứng dụng Lộc Phát Số và tất cả nội dung, bao gồm nhưng không giới hạn ở văn bản, hình ảnh, logo, và phần mềm, thuộc sở hữu của VNDev Labs và được bảo vệ bởi luật sở hữu trí tuệ.`,
     },
     {
       id: 'usage',
       title: '3. Sử Dụng Ứng Dụng',
-      content: `Bạn có quyền sử dụng ứng dụng Lộc Phát Số cho mục đích cá nhân và phi thương mại. Bạn không được phép sao chép, sửa đổi, phân phối, hoặc tạo ra các sản phẩm phái sinh từ ứng dụng mà không có sự đồng ý bằng văn bản của VN Dev Labs.`,
+      content: `Bạn có quyền sử dụng ứng dụng Lộc Phát Số cho mục đích cá nhân và phi thương mại. Bạn không được phép sao chép, sửa đổi, phân phối, hoặc tạo ra các sản phẩm phái sinh từ ứng dụng mà không có sự đồng ý bằng văn bản của VNDev Labs.`,
     },
     {
       id: 'liability',
       title: '4. Giới hạn Trách Nhiệm',
-      content: `VN Dev Labs không chịu trách nhiệm về bất kỳ thiệt hại nào phát sinh từ việc sử dụng hoặc không thể sử dụng ứng dụng Lộc Phát Số. Chúng tôi cam kết cung cấp thông tin chính xác và cập nhật, nhưng không đảm bảo tính hoàn toàn chính xác của kết quả xổ số.`,
+      content: `VNDev Labs không chịu trách nhiệm về bất kỳ thiệt hại nào phát sinh từ việc sử dụng hoặc không thể sử dụng ứng dụng Lộc Phát Số. Chúng tôi cam kết cung cấp thông tin chính xác và cập nhật, nhưng không đảm bảo tính hoàn toàn chính xác của kết quả xổ số.`,
     },
     {
       id: 'changes',
       title: '5. Thay Đổi Điều Khoản',
-      content: `VN Dev Labs có quyền thay đổi các Điều khoản Sử dụng này bất kỳ lúc nào. Các thay đổi sẽ có hiệu lực ngay khi được đăng tải trên ứng dụng. Bạn có trách nhiệm thường xuyên xem xét các Điều khoản này để cập nhật thông tin mới nhất.`,
+      content: `VNDev Labs có quyền thay đổi các Điều khoản Sử dụng này bất kỳ lúc nào. Các thay đổi sẽ có hiệu lực ngay khi được đăng tải trên ứng dụng. Bạn có trách nhiệm thường xuyên xem xét các Điều khoản này để cập nhật thông tin mới nhất.`,
     },
     {
       id: 'law',
@@ -198,7 +198,7 @@ const PolicyTerms = () => {
                     Chính Sách Bảo Mật
                   </h3>
                   <p className='text-gray-700 dark:text-gray-300 mb-8'>
-                    Chính sách bảo mật này mô tả cách VN Dev Labs thu thập, sử
+                    Chính sách bảo mật này mô tả cách VNDev Labs thu thập, sử
                     dụng và bảo vệ thông tin khi bạn sử dụng ứng dụng Lộc Phát
                     Số. Chúng tôi cam kết bảo vệ quyền riêng tư của bạn và chỉ
                     thu thập những thông tin cần thiết để cung cấp dịch vụ tốt
