@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const Screenshots = () => {
@@ -25,17 +25,35 @@ const Screenshots = () => {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [autoPlay, setAutoPlay] = useState(true);
 
-  const nextSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === screenshots.length - 1 ? 0 : prevIndex + 1
-    );
-  };
+  // Auto-scroll functionality
+  useEffect(() => {
+    let interval;
+    if (autoPlay) {
+      interval = setInterval(() => {
+        setCurrentIndex((prevIndex) =>
+          prevIndex === screenshots.length - 1 ? 0 : prevIndex + 1
+        );
+      }, 3000);
+    }
+    return () => clearInterval(interval);
+  }, [autoPlay, screenshots.length]);
 
-  const prevSlide = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? screenshots.length - 1 : prevIndex - 1
-    );
+  // Pause auto-scroll when user interacts
+  const handleManualNavigation = (direction) => {
+    setAutoPlay(false);
+    if (direction === 'prev') {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === 0 ? screenshots.length - 1 : prevIndex - 1
+      );
+    } else {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === screenshots.length - 1 ? 0 : prevIndex + 1
+      );
+    }
+    // Resume auto-scroll after 5 seconds of inactivity
+    setTimeout(() => setAutoPlay(true), 5000);
   };
 
   // Calculate visible screenshots for the carousel
@@ -72,18 +90,20 @@ const Screenshots = () => {
                   <img
                     src={
                       screenshot.src ||
-                      `/locphatso_500-500-nobg.png?height=600&width=300`
+                      `/images/locphatso_500-500-nobg.png?height=600&width=300`
                     }
                     alt={screenshot.alt}
                     className='h-[500px] w-auto rounded-[24px] border-4 border-gray-800'
                   />
+                  {/* Reflection effect */}
+                  <div className='absolute bottom-3 left-3 right-3 h-1/3 bg-gradient-to-b from-transparent to-black opacity-20 rounded-b-[24px] pointer-events-none'></div>
                 </div>
               </div>
             ))}
           </div>
 
           <button
-            onClick={prevSlide}
+            onClick={() => handleManualNavigation('prev')}
             className='absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-[#1a1a1a] p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-[#2a2a2a] transition-colors duration-300'
             aria-label='Previous screenshot'
           >
@@ -91,7 +111,7 @@ const Screenshots = () => {
           </button>
 
           <button
-            onClick={nextSlide}
+            onClick={() => handleManualNavigation('next')}
             className='absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-[#1a1a1a] p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-[#2a2a2a] transition-colors duration-300'
             aria-label='Next screenshot'
           >
@@ -103,6 +123,12 @@ const Screenshots = () => {
           <a
             href='#download'
             className='px-8 py-3 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-full font-medium text-lg transition-colors duration-300 shadow-md inline-block'
+            onClick={(e) => {
+              e.preventDefault();
+              document
+                .getElementById('download')
+                ?.scrollIntoView({ behavior: 'smooth' });
+            }}
           >
             Tải Ứng Dụng Ngay
           </a>

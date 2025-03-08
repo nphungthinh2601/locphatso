@@ -1,6 +1,6 @@
 const DevelopmentTeam = () => {
   return (
-    <section id='team' className='py-20 bg-white dark:bg-[#0a0a0a]'>
+    <section id='team' className='py-20 bg-orange-50 dark:bg-[#0a0a0a]'>
       <div className='container mx-auto max-w-6xl px-4'>
         <div className='text-center mb-16'>
           <h2 className='text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4'>

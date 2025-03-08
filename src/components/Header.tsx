@@ -10,6 +10,13 @@ const Header = () => {
     }
   };
 
+  const scrollToDownload = () => {
+    const downloadSection = document.getElementById('download');
+    if (downloadSection) {
+      downloadSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <header className='relative min-h-screen flex flex-col items-center justify-center text-center px-4 py-20'>
       <div className='absolute inset-0 bg-gradient-to-b from-orange-100 to-orange-200 dark:from-[#0a0a0a] dark:to-[#121212] -z-10'></div>
@@ -41,7 +48,11 @@ const Header = () => {
         <div className='flex flex-col md:flex-row gap-4 justify-center mb-16'>
           <a
             href='#download'
-            className='px-8 py-3 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-full font-medium text-lg transition-colors duration-300 shadow-md'
+            className='px-8 py-3 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-full font-medium text-lg transition-colors duration-300'
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToDownload();
+            }}
           >
             Tải Ứng Dụng
           </a>

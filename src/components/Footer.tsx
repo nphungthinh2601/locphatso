@@ -1,7 +1,16 @@
+'use client';
+
 import { Mail, MapPin, FileText } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+
+  const scrollToSection = (sectionId) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
 
   return (
     <footer id='footer' className='bg-black text-white py-12'>
@@ -80,8 +89,12 @@ const Footer = () => {
             <h3 className='text-lg font-semibold mb-4'>Tải Ứng Dụng</h3>
             <div className='flex flex-col space-y-3'>
               <a
-                href='#appstore'
+                href='#download'
                 className='flex items-center bg-black border border-gray-700 rounded-lg px-4 py-2 hover:bg-gray-900 transition-colors duration-300'
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('download');
+                }}
               >
                 <svg
                   className='h-7 w-7 mr-3'
@@ -96,8 +109,12 @@ const Footer = () => {
                 </div>
               </a>
               <a
-                href='#googleplay'
+                href='#download'
                 className='flex items-center bg-black border border-gray-700 rounded-lg px-4 py-2 hover:bg-gray-900 transition-colors duration-300'
+                onClick={(e) => {
+                  e.preventDefault();
+                  scrollToSection('download');
+                }}
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
