@@ -8,6 +8,7 @@ import Screenshots from './components/Screenshots';
 import DownloadApp from './components/DownloadApp';
 import Testimonials from './components/Testimonials';
 import DevelopmentTeam from './components/DevelopmentTeam';
+import DataDeletion from './components/DataDeletion';
 import PolicyTerms from './components/PolicyTerms';
 import TermsOfUse from './components/TermsOfUse';
 import Footer from './components/Footer';
@@ -67,6 +68,7 @@ function App() {
       <Testimonials />
       <DownloadApp />
       <DevelopmentTeam />
+      <DataDeletion />
       <PolicyTerms />
       <Footer />
 
