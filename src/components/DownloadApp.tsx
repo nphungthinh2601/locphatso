@@ -77,7 +77,7 @@ const DownloadApp = () => {
                       </a>
                     </div>
                   </div>
-                  <div className='md:w-1/4 flex justify-center'>
+                  <div className='hidden sm:flex md:w-1/4 justify-center'>
                     <div className='bg-white dark:bg-[#2a2a2a] p-2 rounded-xl shadow'>
                       <QrCode className='h-16 w-16 text-gray-800 dark:text-white' />
                     </div>
@@ -123,7 +123,7 @@ const DownloadApp = () => {
                       </a>
                     </div>
                   </div>
-                  <div className='md:w-1/4 flex justify-center'>
+                  <div className='hidden sm:flex md:w-1/4 justify-center'>
                     <div className='bg-white dark:bg-[#2a2a2a] p-2 rounded-xl shadow'>
                       <QrCode className='h-16 w-16 text-gray-800 dark:text-white' />
                     </div>

@@ -18,7 +18,7 @@ const DataDeletion = () => {
           <div className='lg:w-1/2'>
             <div className='bg-orange-50 dark:bg-[#121212] rounded-2xl p-8 shadow-lg'>
               <h3 className='text-2xl font-bold text-gray-800 dark:text-white mb-6 flex items-center'>
-                <Trash2 className='h-6 w-6 text-orange-500 dark:text-[#ff3333] mr-2' />
+                <Trash2 className='h-6 w-6 text-orange-500 dark:text-[#ff3333] mr-4' />
                 Cách xóa dữ liệu của bạn
               </h3>
 
