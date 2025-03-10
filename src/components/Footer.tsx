@@ -16,7 +16,7 @@ const Footer = () => {
     <footer id='footer' className='bg-black text-white py-12'>
       <div className='container mx-auto max-w-6xl px-4'>
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8'>
-          <div>
+          <div className='flex flex-col justify-center items-left h-full'>
             <div className='flex items-center mb-4'>
               <img
                 src='/images/locphatso_500-500-nobg.png'
@@ -25,14 +25,11 @@ const Footer = () => {
               />
               <h3 className='text-xl font-bold'>Lộc Phát Số</h3>
             </div>
-            <div className='flex items-center text-gray-400'>
-              <MapPin className='h-5 w-5 mr-2' />
-              <span>TP. Hồ Chí Minh, Việt Nam</span>
-            </div>
           </div>
 
           <div>
             <h3 className='text-lg font-semibold mb-4'>Liên Hệ</h3>
+
             <div className='flex items-center text-gray-400 mb-4'>
               <Mail className='h-5 w-5 mr-2' />
               <a
@@ -41,6 +38,10 @@ const Footer = () => {
               >
                 ungdunglocphatso@gmail.com
               </a>
+            </div>
+            <div className='flex items-center text-gray-400 mb-4'>
+              <MapPin className='h-5 w-5 mr-2' />
+              <span>TP. Hồ Chí Minh, Việt Nam</span>
             </div>
             <div className='flex space-x-4'>
               <a

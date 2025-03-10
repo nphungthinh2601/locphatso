@@ -121,26 +121,25 @@ const PolicyTerms = () => {
             <div className='sticky top-20'>
               <div className='flex mb-6 border-b border-gray-200 dark:border-gray-700'>
                 <button
-                  className={`flex-1 py-3 font-medium text-center ${
+                  className={`py-3 font-medium text-center truncate transition-all duration-300 ${
                     activeTab === 'privacy'
-                      ? 'text-orange-500 dark:text-[#ff3333] border-b-2 border-orange-500 dark:border-[#ff3333]'
-                      : 'text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-[#ff3333]'
+                      ? 'flex-[1.5] text-orange-500 dark:text-[#ff3333] border-b-2 border-orange-500 dark:border-[#ff3333]'
+                      : 'flex-1 text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-[#ff3333]'
                   }`}
                   onClick={() => setActiveTab('privacy')}
                 >
-                  <FileText className='h-5 w-5 mx-auto mb-1' />
-                  CS Bảo Mật
+                  <div className='px-4'>Chính Sách Bảo Mật</div>
                 </button>
+
                 <button
-                  className={`flex-1 py-3 font-medium text-center ${
+                  className={`py-3 font-medium text-center truncate transition-all duration-300 ${
                     activeTab === 'terms'
-                      ? 'text-orange-500 dark:text-[#ff3333] border-b-2 border-orange-500 dark:border-[#ff3333]'
-                      : 'text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-[#ff3333]'
+                      ? 'flex-[1.5] text-orange-500 dark:text-[#ff3333] border-b-2 border-orange-500 dark:border-[#ff3333]'
+                      : 'flex-1 text-gray-500 dark:text-gray-400 hover:text-orange-500 dark:hover:text-[#ff3333]'
                   }`}
                   onClick={() => setActiveTab('terms')}
                 >
-                  <FileText className='h-5 w-5 mx-auto mb-1' />
-                  ĐK Sử Dụng
+                  <div className='px-4'>Điều Khoản Sử Dụng</div>
                 </button>
               </div>
 
@@ -212,19 +211,20 @@ const PolicyTerms = () => {
                         id={section.id}
                         className='border-b border-gray-200 dark:border-gray-700 pb-6 last:border-0'
                       >
-                        <button
+                        {/* button -> div */}
+                        <div
                           className='flex justify-between items-center w-full text-left'
                           onClick={() => toggleSection(section.id)}
                         >
                           <h4 className='text-xl font-semibold text-gray-800 dark:text-white'>
                             {section.title}
                           </h4>
-                          {expandedSection === section.id ? (
+                          {/* {expandedSection === section.id ? (
                             <ChevronUp className='h-5 w-5 text-orange-500 dark:text-[#ff3333]' />
                           ) : (
                             <ChevronDown className='h-5 w-5 text-orange-500 dark:text-[#ff3333]' />
-                          )}
-                        </button>
+                          )} */}
+                        </div>
                         <div
                           className={`mt-4 text-gray-700 dark:text-gray-300 whitespace-pre-line ${
                             expandedSection === section.id
@@ -259,19 +259,20 @@ const PolicyTerms = () => {
                         id={section.id}
                         className='border-b border-gray-200 dark:border-gray-700 pb-6 last:border-0'
                       >
-                        <button
+                        {/* button -> div */}
+                        <div
                           className='flex justify-between items-center w-full text-left'
                           onClick={() => toggleSection(section.id)}
                         >
                           <h4 className='text-xl font-semibold text-gray-800 dark:text-white'>
                             {section.title}
                           </h4>
-                          {expandedSection === section.id ? (
+                          {/* {expandedSection === section.id ? (
                             <ChevronUp className='h-5 w-5 text-orange-500 dark:text-[#ff3333]' />
                           ) : (
                             <ChevronDown className='h-5 w-5 text-orange-500 dark:text-[#ff3333]' />
-                          )}
-                        </button>
+                          )} */}
+                        </div>
                         <div
                           className={`mt-4 text-gray-700 dark:text-gray-300 ${
                             expandedSection === section.id
