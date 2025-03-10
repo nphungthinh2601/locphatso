@@ -122,7 +122,7 @@ const Screenshots = () => {
         <div className='mt-12 text-center'>
           <a
             href='#download'
-            className='px-8 py-3 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-full font-medium text-lg transition-colors duration-300 shadow-md inline-block'
+            className='px-8 py-3 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-xl font-medium text-lg transition-colors duration-300 shadow-md inline-block'
             onClick={(e) => {
               e.preventDefault();
               document

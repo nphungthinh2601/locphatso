@@ -38,7 +38,7 @@ const DevelopmentTeam = () => {
                 mang đến trải nghiệm tốt nhất cho người chơi xổ số tại Việt Nam.
               </p>
               <div className='mt-6 flex flex-wrap gap-4'>
-                <div className='bg-white dark:bg-[#1a1a1a] px-4 py-3 rounded-lg shadow-sm'>
+                <div className='bg-white dark:bg-[#1a1a1a] px-4 py-3 rounded-xl shadow-sm w-full sm:w-auto'>
                   <div className='text-2xl font-bold text-orange-500 dark:text-[#ff3333]'>
                     5+
                   </div>
@@ -46,7 +46,7 @@ const DevelopmentTeam = () => {
                     Năm kinh nghiệm
                   </div>
                 </div>
-                <div className='bg-white dark:bg-[#1a1a1a] px-4 py-3 rounded-lg shadow-sm'>
+                <div className='bg-white dark:bg-[#1a1a1a] px-4 py-3 rounded-xl shadow-sm w-full sm:w-auto'>
                   <div className='text-2xl font-bold text-orange-500 dark:text-[#ff3333]'>
                     10+
                   </div>
@@ -54,7 +54,7 @@ const DevelopmentTeam = () => {
                     Ứng dụng đã phát triển
                   </div>
                 </div>
-                <div className='bg-white dark:bg-[#1a1a1a] px-4 py-3 rounded-lg shadow-sm'>
+                <div className='bg-white dark:bg-[#1a1a1a] px-4 py-3 rounded-xl shadow-sm w-full sm:w-auto'>
                   <div className='text-2xl font-bold text-orange-500 dark:text-[#ff3333]'>
                     1M+
                   </div>

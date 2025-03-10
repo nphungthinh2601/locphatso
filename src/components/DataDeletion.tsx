@@ -133,7 +133,7 @@ const DataDeletion = () => {
                 </li>
               </ul>
 
-              <div className='mt-8 p-4 bg-white dark:bg-[#1a1a1a] rounded-lg border border-orange-200 dark:border-[#2a2a2a]'>
+              <div className='mt-8 p-4 bg-white dark:bg-[#1a1a1a] rounded-xl border border-orange-200 dark:border-[#2a2a2a]'>
                 <h4 className='font-semibold text-gray-800 dark:text-white mb-2'>
                   Thời gian xử lý:
                 </h4>
@@ -143,7 +143,7 @@ const DataDeletion = () => {
                 </p>
               </div>
 
-              <div className='mt-8 bg-orange-100 dark:bg-[#1a1a1a] p-4 rounded-lg border-l-4 border-orange-500 dark:border-[#ff3333]'>
+              <div className='mt-8 bg-orange-100 dark:bg-[#1a1a1a] p-4 rounded-r-xl rounded-l-lg border-l-4 border-orange-500 dark:border-[#ff3333]'>
                 <p className='text-gray-700 dark:text-gray-300 italic'>
                   "Lộc Phát Số (VNDev Labs) cam kết bảo vệ quyền riêng tư của
                   người dùng và tuân thủ các quy định về bảo vệ dữ liệu. Bạn có

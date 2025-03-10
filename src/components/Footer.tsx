@@ -21,7 +21,7 @@ const Footer = () => {
               <img
                 src='/images/locphatso_500-500-nobg.png'
                 alt='Lộc Phát Số Logo'
-                className='w-12 h-12 rounded-lg mr-3'
+                className='w-12 h-12 rounded-xl mr-3'
               />
               <h3 className='text-xl font-bold'>Lộc Phát Số</h3>
             </div>
@@ -91,7 +91,7 @@ const Footer = () => {
             <div className='flex flex-col space-y-3'>
               <a
                 href='#download'
-                className='flex items-center bg-black border border-gray-700 rounded-lg px-4 py-2 hover:bg-gray-900 transition-colors duration-300'
+                className='flex items-center bg-black border border-gray-700 rounded-xl px-4 py-2 hover:bg-gray-900 transition-colors duration-300'
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection('download');
@@ -111,7 +111,7 @@ const Footer = () => {
               </a>
               <a
                 href='#download'
-                className='flex items-center bg-black border border-gray-700 rounded-lg px-4 py-2 hover:bg-gray-900 transition-colors duration-300'
+                className='flex items-center bg-black border border-gray-700 rounded-xl px-4 py-2 hover:bg-gray-900 transition-colors duration-300'
                 onClick={(e) => {
                   e.preventDefault();
                   scrollToSection('download');

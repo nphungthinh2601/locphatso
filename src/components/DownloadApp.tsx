@@ -70,7 +70,7 @@ const DownloadApp = () => {
                     <div className='flex flex-col items-center'>
                       <a
                         href='#appstore'
-                        className='inline-flex items-center px-4 py-2 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-full font-medium transition-colors duration-300'
+                        className='inline-flex items-center px-4 py-2 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-xl font-medium transition-colors duration-300'
                       >
                         <Download className='mr-2' size={24} />
                         Tải về ngay
@@ -78,7 +78,7 @@ const DownloadApp = () => {
                     </div>
                   </div>
                   <div className='md:w-1/4 flex justify-center'>
-                    <div className='bg-white dark:bg-[#2a2a2a] p-2 rounded-lg shadow'>
+                    <div className='bg-white dark:bg-[#2a2a2a] p-2 rounded-xl shadow'>
                       <QrCode className='h-16 w-16 text-gray-800 dark:text-white' />
                     </div>
                   </div>
@@ -116,7 +116,7 @@ const DownloadApp = () => {
                     <div className='flex flex-col items-center'>
                       <a
                         href='#googleplay'
-                        className='inline-flex items-center px-4 py-2 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-full font-medium transition-colors duration-300'
+                        className='inline-flex items-center px-4 py-2 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-xl font-medium transition-colors duration-300'
                       >
                         <Download className='mr-2' size={24} />
                         Tải về ngay
@@ -124,14 +124,14 @@ const DownloadApp = () => {
                     </div>
                   </div>
                   <div className='md:w-1/4 flex justify-center'>
-                    <div className='bg-white dark:bg-[#2a2a2a] p-2 rounded-lg shadow'>
+                    <div className='bg-white dark:bg-[#2a2a2a] p-2 rounded-xl shadow'>
                       <QrCode className='h-16 w-16 text-gray-800 dark:text-white' />
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className='mt-8 p-4 bg-orange-100 dark:bg-[#1a1a1a] rounded-lg'>
+              <div className='mt-8 p-4 bg-orange-100 dark:bg-[#1a1a1a] rounded-xl'>
                 <h4 className='font-semibold text-gray-800 dark:text-white mb-2'>
                   Yêu cầu hệ thống:
                 </h4>
