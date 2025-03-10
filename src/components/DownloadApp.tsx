@@ -1,4 +1,4 @@
-import { QrCode, ArrowDown } from 'lucide-react';
+import { QrCode, Download } from 'lucide-react';
 
 const DownloadApp = () => {
   return (
@@ -67,19 +67,15 @@ const DownloadApp = () => {
                     <p className='text-gray-600 dark:text-gray-300 text-sm mb-3'>
                       Tải về cho iPhone, iPad và các thiết bị iOS
                     </p>
-                    <a
-                      href='#appstore'
-                      className='inline-flex items-center px-4 py-2 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-full font-medium transition-colors duration-300'
-                    >
-                      <svg
-                        className='h-5 w-5 mr-2'
-                        viewBox='0 0 24 24'
-                        fill='currentColor'
+                    <div className='flex flex-col items-center'>
+                      <a
+                        href='#appstore'
+                        className='inline-flex items-center px-4 py-2 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-full font-medium transition-colors duration-300'
                       >
-                        <path d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z' />
-                      </svg>
-                      Tải về ngay
-                    </a>
+                        <Download className='mr-2' size={24} />
+                        Tải về ngay
+                      </a>
+                    </div>
                   </div>
                   <div className='md:w-1/4 flex justify-center'>
                     <div className='bg-white dark:bg-[#2a2a2a] p-2 rounded-lg shadow'>
@@ -114,21 +110,18 @@ const DownloadApp = () => {
                       Google Play
                     </h4>
                     <p className='text-gray-600 dark:text-gray-300 text-sm mb-3'>
-                      Tải về cho các thiết bị Android
+                      Tải về cho các thiết bị Android, điện thoại và máy tính
+                      bảng.
                     </p>
-                    <a
-                      href='#googleplay'
-                      className='inline-flex items-center px-4 py-2 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-full font-medium transition-colors duration-300'
-                    >
-                      <svg
-                        className='h-5 w-5 mr-2'
-                        viewBox='0 0 24 24'
-                        fill='currentColor'
+                    <div className='flex flex-col items-center'>
+                      <a
+                        href='#googleplay'
+                        className='inline-flex items-center px-4 py-2 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-full font-medium transition-colors duration-300'
                       >
-                        <path d='M12 4l-1.41 1.41L16.17 11H4v2h12.17l-5.58 5.59L12 20l8-8z' />
-                      </svg>
-                      Tải về ngay
-                    </a>
+                        <Download className='mr-2' size={24} />
+                        Tải về ngay
+                      </a>
+                    </div>
                   </div>
                   <div className='md:w-1/4 flex justify-center'>
                     <div className='bg-white dark:bg-[#2a2a2a] p-2 rounded-lg shadow'>

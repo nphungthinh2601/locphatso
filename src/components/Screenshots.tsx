@@ -80,11 +80,11 @@ const Screenshots = () => {
             {visibleScreenshots.map((screenshot, index) => (
               <div
                 key={screenshot.id}
-                className={`relative ${
+                className={`relative transition-all duration-300 ${
                   index === 1
                     ? 'z-10 scale-110 shadow-xl'
                     : 'scale-90 opacity-70 shadow-md'
-                } transition-all duration-300`}
+                } ${index !== 1 ? 'hidden sm:block' : ''}`} // Chỉ hiển thị ảnh chính trên mobile
               >
                 <div className='bg-gray-800 rounded-[32px] p-3 inline-block'>
                   <img
@@ -95,7 +95,7 @@ const Screenshots = () => {
                     alt={screenshot.alt}
                     className='h-[500px] w-auto rounded-[24px] border-4 border-gray-800'
                   />
-                  {/* Reflection effect */}
+                  {/* Hiệu ứng phản chiếu */}
                   <div className='absolute bottom-3 left-3 right-3 h-1/3 bg-gradient-to-b from-transparent to-black opacity-20 rounded-b-[24px] pointer-events-none'></div>
                 </div>
               </div>
