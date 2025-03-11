@@ -18,6 +18,10 @@
       property="og:url"
       content="https://ungdunglocphatso.vndevlabs.com/app.html"
     />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Lộc Phát Số" />
+    <meta property="og:image:width" content="500" />
+    <meta property="og:image:height" content="500" />
 
     <title>Đang chuyển hướng...</title>
 
@@ -27,23 +31,34 @@
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         var userAgent = navigator.userAgent || navigator.vendor;
+        var botUserAgents = [
+          'facebookexternalhit',
+          'Facebot',
+          'Twitterbot',
+          'WhatsApp',
+          'Zalo',
+        ];
+
+        // Kiểm tra nếu là bot, không redirect ngay lập tức
+        var isBot = botUserAgents.some((bot) => userAgent.includes(bot));
+        if (isBot) {
+          return;
+        }
+
         var androidAppLink =
           'https://play.google.com/store/apps/details?id=cloud.nphungthinh2601.lottery';
         var iosAppLink = 'https://apps.apple.com/app/locphatso';
-        var isRedirecting = true;
 
-        if (/android/i.test(userAgent)) {
-          window.location.href = androidAppLink;
-        } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
-          window.location.href = iosAppLink;
-        } else {
-          isRedirecting = false;
-        }
-
-        if (!isRedirecting) {
-          document.getElementById('redirect-message').innerHTML =
-            'Không tìm thấy nền tảng phù hợp. Vui lòng tải ứng dụng thủ công!';
-        }
+        setTimeout(function () {
+          if (/android/i.test(userAgent)) {
+            window.location.href = androidAppLink;
+          } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+            window.location.href = iosAppLink;
+          } else {
+            document.getElementById('redirect-message').innerHTML =
+              'Không tìm thấy nền tảng phù hợp. Vui lòng tải ứng dụng thủ công!';
+          }
+        }, 3000); // Delay 3 giây trước khi redirect
       });
     </script>
   </head>
