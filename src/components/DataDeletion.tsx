@@ -35,8 +35,8 @@ const DataDeletion = () => {
                       Truy cập vào ứng dụng
                     </h4>
                     <p className='text-gray-600 dark:text-gray-300'>
-                      Mở ứng dụng Lộc Phát Số được phát triển bởi VNDevLabs trên
-                      thiết bị của bạn
+                      Mở ứng dụng Lộc Phát Số được phát triển bởi VNDev Labs
+                      trên thiết bị của bạn
                     </p>
                   </div>
                 </div>

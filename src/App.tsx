@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Sun, Moon } from 'lucide-react';
 import Header from './components/Header';
 import Features from './components/Features';
@@ -47,33 +48,70 @@ function App() {
   };
 
   return (
-    <div className='min-h-screen bg-orange-50 dark:bg-[#0a0a0a] transition-colors duration-300'>
-      <div className='fixed top-4 right-4 z-50'>
-        <button
-          onClick={toggleDarkMode}
-          className='p-2 rounded-full bg-white dark:bg-[#1a1a1a] shadow-md'
-          aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}
-        >
-          {darkMode ? (
-            <Sun className='h-5 w-5 text-[#ff3333]' />
-          ) : (
-            <Moon className='h-5 w-5 text-gray-700' />
-          )}
-        </button>
+    <Router>
+      <div className='min-h-screen bg-orange-50 dark:bg-[#0a0a0a] transition-colors duration-300'>
+        <div className='fixed top-4 right-4 z-50'>
+          <button
+            onClick={toggleDarkMode}
+            className='p-2 rounded-full bg-white dark:bg-[#1a1a1a] shadow-md'
+            aria-label={
+              darkMode ? 'Switch to light mode' : 'Switch to dark mode'
+            }
+          >
+            {darkMode ? (
+              <Sun className='h-5 w-5 text-[#ff3333]' />
+            ) : (
+              <Moon className='h-5 w-5 text-gray-700' />
+            )}
+          </button>
+        </div>
+
+        <Routes>
+          <Route
+            path='/'
+            element={
+              <>
+                <Header />
+                <Features />
+                <Screenshots />
+                <Testimonials />
+                <DownloadApp />
+                <DevelopmentTeam />
+                <Footer />
+                {showTerms && <TermsOfUse onClose={toggleTerms} />}
+              </>
+            }
+          />
+          <Route
+            path='/app'
+            element={
+              <>
+                <DownloadApp />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path='/policy'
+            element={
+              <>
+                <PolicyTerms />
+                <Footer />
+              </>
+            }
+          />
+          <Route
+            path='/data-deletion'
+            element={
+              <>
+                <DataDeletion />
+                <Footer />
+              </>
+            }
+          />
+        </Routes>
       </div>
-
-      <Header />
-      <Features />
-      <Screenshots />
-      <Testimonials />
-      <DownloadApp />
-      <DevelopmentTeam />
-      <DataDeletion />
-      <PolicyTerms />
-      <Footer />
-
-      {showTerms && <TermsOfUse onClose={toggleTerms} />}
-    </div>
+    </Router>
   );
 }
 

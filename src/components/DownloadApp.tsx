@@ -1,6 +1,39 @@
+import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { QrCode, Download } from 'lucide-react';
 
 const DownloadApp = () => {
+  const location = useLocation();
+  const androidAppLink =
+    'https://play.google.com/store/apps/details?id=cloud.nphungthinh2601.lottery';
+  const iosAppLink = 'https://apps.apple.com/app/locphatso';
+  const [isRedirecting, setIsRedirecting] = useState(false);
+
+  useEffect(() => {
+    if (location.pathname === '/app') {
+      setIsRedirecting(true);
+      const userAgent = navigator.userAgent || navigator.vendor;
+
+      if (/android/i.test(userAgent)) {
+        window.location.href = androidAppLink;
+      } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+        window.location.href = iosAppLink;
+      } else {
+        setIsRedirecting(false);
+      }
+    }
+  }, [location.pathname]);
+
+  if (isRedirecting) {
+    return (
+      <div className='flex items-center justify-center h-screen'>
+        <p className='text-lg text-gray-800 dark:text-white'>
+          Đang chuyển hướng đến cửa hàng ứng dụng...
+        </p>
+      </div>
+    );
+  }
+
   return (
     <section
       id='download'
@@ -69,7 +102,7 @@ const DownloadApp = () => {
                     </p>
                     <div className='flex flex-col items-center'>
                       <a
-                        href='#appstore'
+                        href={iosAppLink}
                         className='inline-flex items-center px-4 py-2 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-xl font-medium transition-colors duration-300'
                       >
                         <Download className='mr-2' size={24} />
@@ -115,7 +148,7 @@ const DownloadApp = () => {
                     </p>
                     <div className='flex flex-col items-center'>
                       <a
-                        href='#googleplay'
+                        href={androidAppLink}
                         className='inline-flex items-center px-4 py-2 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-xl font-medium transition-colors duration-300'
                       >
                         <Download className='mr-2' size={24} />
