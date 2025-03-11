@@ -1,7 +1,12 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from 'react-router-dom';
 import { Sun, Moon } from 'lucide-react';
 import Header from './components/Header';
 import Features from './components/Features';
@@ -82,15 +87,7 @@ function App() {
               </>
             }
           />
-          <Route
-            path='/app'
-            element={
-              <>
-                <DownloadApp />
-                <Footer />
-              </>
-            }
-          />
+          <Route path='/app' element={<Navigate to='/app.html' replace />} />
           <Route
             path='/policy'
             element={

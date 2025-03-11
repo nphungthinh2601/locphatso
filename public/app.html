@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Open Graph Meta Tags for Facebook/Zalo/WhatsApp -->
+    <meta property="og:title" content="📲 Tải Lộc Phát Số ngay!" />
+    <meta
+      property="og:description"
+      content="Ứng dụng xổ số siêu hot! Tải ngay để nhận thưởng! 🚀"
+    />
+    <meta
+      property="og:image"
+      content="https://ungdunglocphatso.vndevlabs.com/images/locphatso_500-500-nobg.png"
+    />
+    <meta
+      property="og:url"
+      content="https://ungdunglocphatso.vndevlabs.com/app"
+    />
+
+    <title>Đang chuyển hướng...</title>
+
+    <!-- Tailwind CSS for Modern Styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var userAgent = navigator.userAgent || navigator.vendor;
+        var androidAppLink =
+          'https://play.google.com/store/apps/details?id=cloud.nphungthinh2601.lottery';
+        var iosAppLink = 'https://apps.apple.com/app/locphatso';
+        var isRedirecting = true;
+
+        if (/android/i.test(userAgent)) {
+          window.location.href = androidAppLink;
+        } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
+          window.location.href = iosAppLink;
+        } else {
+          isRedirecting = false;
+        }
+
+        if (!isRedirecting) {
+          document.getElementById('redirect-message').innerHTML =
+            'Không tìm thấy nền tảng phù hợp. Vui lòng tải ứng dụng thủ công!';
+        }
+      });
+    </script>
+  </head>
+  <body
+    class="bg-gray-100 dark:bg-gray-900 text-gray-800 dark:text-gray-200 flex items-center justify-center h-screen"
+  >
+    <div class="text-center">
+      <img
+        src="https://ungdunglocphatso.vndevlabs.com/images/locphatso_500-500-nobg.png"
+        alt="Lộc Phát Số"
+        class="w-32 h-32 mx-auto animate-bounce"
+      />
+      <h1 class="text-2xl font-bold mt-4">Đang chuyển hướng...</h1>
+      <p id="redirect-message" class="mt-2 text-gray-600 dark:text-gray-400">
+        Nếu không, hãy chọn tải ứng dụng bên dưới:
+      </p>
+
+      <div class="mt-8 space-x-4">
+        <a
+          href="https://play.google.com/store/apps/details?id=cloud.nphungthinh2601.lottery"
+          class="px-8 py-3 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-xl font-medium text-lg transition-colors duration-300 shadow-md inline-block"
+        >
+          Tải trên Google Play
+        </a>
+        <a
+          href="https://apps.apple.com/app/locphatso"
+          class="px-8 py-3 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-xl font-medium text-lg transition-colors duration-300 shadow-md inline-block"
+        >
+          Tải trên App Store
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
