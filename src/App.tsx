@@ -82,6 +82,8 @@ function App() {
                 <Testimonials />
                 <DownloadApp />
                 <DevelopmentTeam />
+                <DataDeletion />
+                <PolicyTerms />
                 <Footer />
                 {showTerms && <TermsOfUse onClose={toggleTerms} />}
               </>
