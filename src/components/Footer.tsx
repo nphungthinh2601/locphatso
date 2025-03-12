@@ -90,12 +90,12 @@ const Footer = () => {
             <h3 className='text-lg font-semibold mb-4'>Tải Ứng Dụng</h3>
             <div className='flex flex-col space-y-3'>
               <a
-                href='#download'
+                href='https://apps.apple.com/app/locphatso'
                 className='flex items-center bg-black border border-gray-700 rounded-xl px-4 py-2 hover:bg-gray-900 transition-colors duration-300'
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('download');
-                }}
+                // onClick={(e) => {
+                //   e.preventDefault();
+                //   scrollToSection('download');
+                // }}
               >
                 <svg
                   className='h-7 w-7 mr-3'
@@ -110,12 +110,12 @@ const Footer = () => {
                 </div>
               </a>
               <a
-                href='#download'
+                href='https://play.google.com/store/apps/details?id=cloud.nphungthinh2601.lottery'
                 className='flex items-center bg-black border border-gray-700 rounded-xl px-4 py-2 hover:bg-gray-900 transition-colors duration-300'
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection('download');
-                }}
+                // onClick={(e) => {
+                //   e.preventDefault();
+                //   scrollToSection('download');
+                // }}
               >
                 <svg
                   xmlns='http://www.w3.org/2000/svg'
