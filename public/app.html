@@ -26,7 +26,7 @@
     <meta property="og:image:width" content="500" />
     <meta property="og:image:height" content="500" />
 
-    <title>Đang chuyển hướng...</title>
+    <title>Lộc Phát Số đang chuyển hướng...</title>
 
     <!-- Tailwind CSS for Modern Styling -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -40,7 +40,38 @@
           'Twitterbot',
           'WhatsApp',
           'Zalo',
+          'Googlebot',
+          'Bingbot',
+          'Slurp',
+          'DuckDuckBot',
+          'Baiduspider',
+          'YandexBot',
+          'Sogou',
+          'Exabot',
+          'ia_archiver',
+          'TelegramBot',
+          'LinkedInBot',
+          'Pinterestbot',
+          'Applebot',
+          'Discordbot',
+          'Google-Read-Aloud',
+          'GPTBot',
+          'ClaudeBot',
+          'PerplexityBot',
+          'Bytespider',
+          'TeamsBot',
+          'Skype',
+          'Instagram',
+          'Threads',
+          'TikTokBot',
+          'ByteSpider',
         ];
+
+        // Kiểm tra nếu là bot, không redirect ngay lập tức
+        var isBot = botUserAgents.some((bot) => userAgent.includes(bot));
+        if (isBot) {
+          return;
+        }
 
         // Kiểm tra nếu là bot, không redirect ngay lập tức
         var isBot = botUserAgents.some((bot) => userAgent.includes(bot));
@@ -74,7 +105,7 @@
         alt="Lộc Phát Số"
         class="w-32 h-32 mx-auto animate-bounce"
       />
-      <h1 class="text-2xl font-bold mt-4">Đang chuyển hướng...</h1>
+      <h1 class="text-2xl font-bold mt-4">Lộc Phát Số đang chuyển hướng...</h1>
       <p id="redirect-message" class="mt-2 text-gray-600 dark:text-gray-400">
         Nếu không, hãy chọn tải ứng dụng bên dưới:
       </p>
