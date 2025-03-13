@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
 
 const Screenshots = () => {
   // For demonstration, we'll use placeholder images
@@ -26,15 +27,18 @@ const Screenshots = () => {
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const [autoPlay, setAutoPlay] = useState(true);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   // Auto-scroll functionality
   useEffect(() => {
     let interval;
     if (autoPlay) {
       interval = setInterval(() => {
+        setIsAnimating(true);
         setCurrentIndex((prevIndex) =>
           prevIndex === screenshots.length - 1 ? 0 : prevIndex + 1
         );
+        setTimeout(() => setIsAnimating(false), 500);
       }, 3000);
     }
     return () => clearInterval(interval);
@@ -42,7 +46,11 @@ const Screenshots = () => {
 
   // Pause auto-scroll when user interacts
   const handleManualNavigation = (direction) => {
+    if (isAnimating) return;
+
     setAutoPlay(false);
+    setIsAnimating(true);
+
     if (direction === 'prev') {
       setCurrentIndex((prevIndex) =>
         prevIndex === 0 ? screenshots.length - 1 : prevIndex - 1
@@ -52,6 +60,8 @@ const Screenshots = () => {
         prevIndex === screenshots.length - 1 ? 0 : prevIndex + 1
       );
     }
+
+    setTimeout(() => setIsAnimating(false), 500);
     // Resume auto-scroll after 5 seconds of inactivity
     setTimeout(() => setAutoPlay(true), 5000);
   };
@@ -66,73 +76,80 @@ const Screenshots = () => {
   return (
     <section id='screenshots' className='py-20 bg-orange-50 dark:bg-[#0a0a0a]'>
       <div className='container mx-auto max-w-6xl px-4'>
-        <div className='text-center mb-16'>
-          <h2 className='text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4'>
-            Giao Diện Ứng Dụng
-          </h2>
-          <p className='text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto'>
-            Khám phá giao diện trực quan và dễ sử dụng của ứng dụng Lộc Phát Số
-          </p>
-        </div>
-
-        <div className='relative'>
-          <div className='flex justify-center items-center gap-4 md:gap-8'>
-            {visibleScreenshots.map((screenshot, index) => (
-              <div
-                key={screenshot.id}
-                className={`relative transition-all duration-300 ${
-                  index === 1
-                    ? 'z-10 scale-110 shadow-xl'
-                    : 'scale-90 opacity-70 shadow-md'
-                } ${index !== 1 ? 'hidden sm:block' : ''}`} // Chỉ hiển thị ảnh chính trên mobile
-              >
-                <div className='bg-gray-800 rounded-[32px] p-3 inline-block'>
-                  <img
-                    src={
-                      screenshot.src ||
-                      `/images/locphatso_500-500-nobg.png?height=600&width=300`
-                    }
-                    alt={screenshot.alt}
-                    className='h-[500px] w-auto rounded-[24px] border-4 border-gray-800'
-                  />
-                  {/* Hiệu ứng phản chiếu */}
-                  <div className='absolute bottom-3 left-3 right-3 h-1/3 bg-gradient-to-b from-transparent to-black opacity-20 rounded-b-[24px] pointer-events-none'></div>
-                </div>
-              </div>
-            ))}
+        <ScrollReveal>
+          <div className='text-center mb-16'>
+            <h2 className='text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4'>
+              Giao Diện Ứng Dụng
+            </h2>
+            <p className='text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto'>
+              Khám phá giao diện trực quan và dễ sử dụng của ứng dụng Lộc Phát
+              Số
+            </p>
           </div>
+        </ScrollReveal>
 
-          <button
-            onClick={() => handleManualNavigation('prev')}
-            className='absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-[#1a1a1a] p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-[#2a2a2a] transition-colors duration-300'
-            aria-label='Previous screenshot'
-          >
-            <ChevronLeft className='h-6 w-6 text-gray-800 dark:text-white' />
-          </button>
+        <ScrollReveal delay={300}>
+          <div className='relative'>
+            <div className='flex justify-center items-center gap-4 md:gap-8'>
+              {visibleScreenshots.map((screenshot, index) => (
+                <div
+                  key={screenshot.id}
+                  className={`relative transition-all duration-300 ${
+                    index === 1
+                      ? 'z-10 scale-110 shadow-xl'
+                      : 'scale-90 opacity-70 shadow-md'
+                  } ${index !== 1 ? 'hidden sm:block' : ''}`}
+                >
+                  <div className='bg-gray-800 rounded-[32px] p-3 inline-block overflow-hidden'>
+                    <img
+                      src={
+                        screenshot.src ||
+                        `/images/locphatso_500-500-nobg.png?height=600&width=300`
+                      }
+                      alt={screenshot.alt}
+                      className='h-[500px] w-auto rounded-[24px] border-4 border-gray-800 transition-transform duration-500 hover:scale-105'
+                    />
+                    {/* Reflection effect */}
+                    <div className='absolute bottom-3 left-3 right-3 h-1/3 bg-gradient-to-b from-transparent to-black opacity-20 rounded-b-[24px] pointer-events-none'></div>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-          <button
-            onClick={() => handleManualNavigation('next')}
-            className='absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-[#1a1a1a] p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-[#2a2a2a] transition-colors duration-300'
-            aria-label='Next screenshot'
-          >
-            <ChevronRight className='h-6 w-6 text-gray-800 dark:text-white' />
-          </button>
-        </div>
+            <button
+              onClick={() => handleManualNavigation('prev')}
+              className='absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-[#1a1a1a] p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-[#2a2a2a] transition-all duration-300 transform hover:scale-110'
+              aria-label='Previous screenshot'
+            >
+              <ChevronLeft className='h-6 w-6 text-gray-800 dark:text-white' />
+            </button>
 
-        <div className='mt-12 text-center'>
-          <a
-            href='#download'
-            className='px-8 py-3 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-xl font-medium text-lg transition-colors duration-300 shadow-md inline-block'
-            onClick={(e) => {
-              e.preventDefault();
-              document
-                .getElementById('download')
-                ?.scrollIntoView({ behavior: 'smooth' });
-            }}
-          >
-            Tải Ứng Dụng Ngay
-          </a>
-        </div>
+            <button
+              onClick={() => handleManualNavigation('next')}
+              className='absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-white dark:bg-[#1a1a1a] p-2 rounded-full shadow-md hover:bg-gray-100 dark:hover:bg-[#2a2a2a] transition-all duration-300 transform hover:scale-110'
+              aria-label='Next screenshot'
+            >
+              <ChevronRight className='h-6 w-6 text-gray-800 dark:text-white' />
+            </button>
+          </div>
+        </ScrollReveal>
+
+        <ScrollReveal delay={500}>
+          <div className='mt-12 text-center'>
+            <a
+              href='#download'
+              className='px-8 py-3 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-full font-medium text-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg inline-block'
+              onClick={(e) => {
+                e.preventDefault();
+                document
+                  .getElementById('download')
+                  ?.scrollIntoView({ behavior: 'smooth' });
+              }}
+            >
+              Tải Ứng Dụng Ngay
+            </a>
+          </div>
+        </ScrollReveal>
       </div>
     </section>
   );

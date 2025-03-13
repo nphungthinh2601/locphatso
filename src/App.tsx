@@ -18,6 +18,7 @@ import DataDeletion from './components/DataDeletion';
 import PolicyTerms from './components/PolicyTerms';
 import TermsOfUse from './components/TermsOfUse';
 import Footer from './components/Footer';
+import ScrollReveal from './components/ScrollReveal';
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
@@ -51,14 +52,13 @@ function App() {
       document.body.style.overflow = 'auto';
     }
   };
-
   return (
     <Router>
       <div className='min-h-screen bg-orange-50 dark:bg-[#0a0a0a] transition-colors duration-300'>
         <div className='fixed top-4 right-4 z-50'>
           <button
             onClick={toggleDarkMode}
-            className='p-2 rounded-full bg-white dark:bg-[#1a1a1a] shadow-md'
+            className='p-2 rounded-full bg-white dark:bg-[#1a1a1a] shadow-md hover:shadow-lg transition-all duration-300 transform hover:scale-110'
             aria-label={
               darkMode ? 'Switch to light mode' : 'Switch to dark mode'
             }
@@ -79,12 +79,24 @@ function App() {
                 <Header />
                 <Features />
                 <Screenshots />
-                <Testimonials />
-                <DownloadApp />
-                <DevelopmentTeam />
-                <DataDeletion />
-                <PolicyTerms />
-                <Footer />
+                <ScrollReveal>
+                  <Testimonials />
+                </ScrollReveal>
+                <ScrollReveal>
+                  <DownloadApp />
+                </ScrollReveal>
+                <ScrollReveal>
+                  <DevelopmentTeam />
+                </ScrollReveal>
+                <ScrollReveal>
+                  <DataDeletion />
+                </ScrollReveal>
+                <ScrollReveal>
+                  <PolicyTerms />
+                </ScrollReveal>
+                <ScrollReveal>
+                  <Footer />
+                </ScrollReveal>
                 {showTerms && <TermsOfUse onClose={toggleTerms} />}
               </>
             }
@@ -95,7 +107,9 @@ function App() {
             element={
               <>
                 <PolicyTerms />
-                <Footer />
+                <ScrollReveal>
+                  <Footer />
+                </ScrollReveal>
               </>
             }
           />
@@ -104,7 +118,9 @@ function App() {
             element={
               <>
                 <DataDeletion />
-                <Footer />
+                <ScrollReveal>
+                  <Footer />
+                </ScrollReveal>
               </>
             }
           />

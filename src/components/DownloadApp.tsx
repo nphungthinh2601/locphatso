@@ -1,39 +1,11 @@
-import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
-import { QrCode, Download } from 'lucide-react';
+import { QrCode, ArrowDown, Download } from 'lucide-react';
+import ScrollReveal from './ScrollReveal';
+import FloatingElement from './FloatingElement';
 
 const DownloadApp = () => {
-  const location = useLocation();
   const androidAppLink =
     'https://play.google.com/store/apps/details?id=cloud.nphungthinh2601.lottery';
   const iosAppLink = 'https://apps.apple.com/app/locphatso';
-  const [isRedirecting, setIsRedirecting] = useState(false);
-
-  useEffect(() => {
-    if (location.pathname === '/app') {
-      setIsRedirecting(true);
-      const userAgent = navigator.userAgent || navigator.vendor;
-
-      if (/android/i.test(userAgent)) {
-        window.location.href = androidAppLink;
-      } else if (/iPhone|iPad|iPod/i.test(userAgent)) {
-        window.location.href = iosAppLink;
-      } else {
-        setIsRedirecting(false);
-      }
-    }
-  }, [location.pathname]);
-
-  if (isRedirecting) {
-    return (
-      <div className='flex items-center justify-center h-screen'>
-        <p className='text-lg text-gray-800 dark:text-white'>
-          Đang chuyển hướng đến cửa hàng ứng dụng...
-        </p>
-      </div>
-    );
-  }
-
   return (
     <section
       id='download'
@@ -41,47 +13,65 @@ const DownloadApp = () => {
     >
       {/* Background decoration */}
       <div className='absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none'>
-        <div className='absolute -top-24 -left-24 w-48 h-48 rounded-full bg-orange-200 dark:bg-[#ff3333] opacity-10'></div>
-        <div className='absolute top-1/2 -right-24 w-64 h-64 rounded-full bg-orange-200 dark:bg-[#ff3333] opacity-10'></div>
-        <div className='absolute -bottom-32 left-1/4 w-72 h-72 rounded-full bg-orange-200 dark:bg-[#ff3333] opacity-10'></div>
+        <div className='absolute -top-24 -left-24 w-48 h-48 rounded-full bg-orange-200 dark:bg-[#ff3333] opacity-10 animate-pulse'></div>
+        <div
+          className='absolute top-1/2 -right-24 w-64 h-64 rounded-full bg-orange-200 dark:bg-[#ff3333] opacity-10 animate-pulse'
+          style={{ animationDelay: '1s' }}
+        ></div>
+        <div
+          className='absolute -bottom-32 left-1/4 w-72 h-72 rounded-full bg-orange-200 dark:bg-[#ff3333] opacity-10 animate-pulse'
+          style={{ animationDelay: '2s' }}
+        ></div>
       </div>
 
       <div className='container mx-auto max-w-6xl px-4 relative z-10'>
-        <div className='text-center mb-16'>
-          <h2 className='text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4'>
-            Tải Ứng Dụng Ngay
-          </h2>
-          <p className='text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto'>
-            Dò vé số nhanh chóng và chính xác mọi lúc, mọi nơi với ứng dụng Lộc
-            Phát Số
-          </p>
-        </div>
+        <ScrollReveal>
+          <div className='text-center mb-16'>
+            <h2 className='text-3xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4'>
+              Tải Ứng Dụng Ngay
+            </h2>
+            <p className='text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto'>
+              Dò vé số nhanh chóng và chính xác mọi lúc, mọi nơi với ứng dụng
+              Lộc Phát Số
+            </p>
+          </div>
+        </ScrollReveal>
 
         <div className='flex flex-col lg:flex-row items-center justify-between gap-12'>
           {/* Left side - App mockup */}
-          <div className='lg:w-1/2 flex justify-center'>
+          <ScrollReveal
+            direction='left'
+            className='lg:w-1/2 flex justify-center'
+          >
             <div className='relative'>
-              <div className='absolute -inset-0.5 bg-gradient-to-r from-orange-400 to-red-500 dark:from-[#ff3333] dark:to-[#ff0000] rounded-[32px] blur opacity-30'></div>
+              <div className='absolute -inset-0.5 bg-gradient-to-r from-orange-400 to-red-500 dark:from-[#ff3333] dark:to-[#ff0000] rounded-[32px] blur opacity-30 animate-pulse'></div>
               <div className='relative bg-gradient-to-b from-orange-100 to-orange-200 dark:from-[#1a1a1a] dark:to-[#121212] rounded-[32px] p-6 shadow-2xl flex items-center justify-center'>
-                <img
-                  src='/images/locphatso_500-500-nobg.png'
-                  alt='Lộc Phát Số App Preview'
-                  className='h-[400px] w-auto'
-                />
+                <FloatingElement amplitude={5} period={3}>
+                  <img
+                    src='/images/locphatso_500-500-nobg.png'
+                    alt='Lộc Phát Số App Preview'
+                    className='h-[400px] w-auto'
+                  />
+                </FloatingElement>
+              </div>
+              <div className='absolute -right-6 -bottom-6 bg-white dark:bg-[#121212] rounded-full p-3 shadow-lg'>
+                <div className='animate-bounce'>
+                  <ArrowDown className='h-8 w-8 text-orange-500 dark:text-[#ff3333]' />
+                </div>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
 
           {/* Right side - Download options */}
-          <div className='lg:w-1/2'>
-            <div className='bg-orange-50 dark:bg-[#121212] rounded-2xl p-8 shadow-lg'>
+          <ScrollReveal direction='right' className='lg:w-1/2'>
+            <div className='bg-orange-50 dark:bg-[#121212] rounded-2xl p-8 shadow-lg transform transition-all duration-500 hover:shadow-xl'>
               <h3 className='text-2xl font-bold text-gray-800 dark:text-white mb-6'>
                 Chọn nền tảng của bạn
               </h3>
 
               <div className='space-y-6'>
                 {/* App Store */}
-                <div className='flex flex-col md:flex-row items-center gap-6 p-4 bg-white dark:bg-[#1a1a1a] rounded-xl shadow-md'>
+                <div className='flex flex-col md:flex-row items-center gap-6 p-4 bg-white dark:bg-[#1a1a1a] rounded-xl shadow-md transform transition-all duration-300 hover:scale-105 hover:shadow-lg'>
                   <div className='md:w-1/4 flex justify-center'>
                     <div className='bg-black rounded-xl p-3 w-24 h-24 flex items-center justify-center'>
                       <svg
@@ -103,7 +93,7 @@ const DownloadApp = () => {
                     <div className='flex flex-col items-center'>
                       <a
                         href={iosAppLink}
-                        className='inline-flex items-center px-4 py-2 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-xl font-medium transition-colors duration-300'
+                        className='inline-flex items-center px-4 py-2 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-xl font-medium transition-all duration-300 transform hover:scale-105'
                       >
                         <Download className='mr-2' size={24} />
                         Tải về ngay
@@ -111,14 +101,14 @@ const DownloadApp = () => {
                     </div>
                   </div>
                   <div className='hidden sm:flex md:w-1/4 justify-center'>
-                    <div className='bg-white dark:bg-[#2a2a2a] p-2 rounded-xl shadow'>
+                    <div className='bg-white dark:bg-[#2a2a2a] p-2 rounded-xl shadow transform transition-all duration-300 hover:scale-110'>
                       <QrCode className='h-16 w-16 text-gray-800 dark:text-white' />
                     </div>
                   </div>
                 </div>
 
                 {/* Google Play */}
-                <div className='flex flex-col md:flex-row items-center gap-6 p-4 bg-white dark:bg-[#1a1a1a] rounded-xl shadow-md'>
+                <div className='flex flex-col md:flex-row items-center gap-6 p-4 bg-white dark:bg-[#1a1a1a] rounded-xl shadow-md transform transition-all duration-300 hover:scale-105 hover:shadow-lg'>
                   <div className='md:w-1/4 flex justify-center'>
                     <div className='bg-black rounded-xl p-3 w-24 h-24 flex items-center justify-center'>
                       <svg
@@ -149,7 +139,7 @@ const DownloadApp = () => {
                     <div className='flex flex-col items-center'>
                       <a
                         href={androidAppLink}
-                        className='inline-flex items-center px-4 py-2 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-xl font-medium transition-colors duration-300'
+                        className='inline-flex items-center px-4 py-2 bg-orange-500 dark:bg-[#ff3333] hover:bg-orange-600 dark:hover:bg-[#ff0000] text-white rounded-xl font-medium transition-all duration-300 transform hover:scale-105'
                       >
                         <Download className='mr-2' size={24} />
                         Tải về ngay
@@ -157,14 +147,14 @@ const DownloadApp = () => {
                     </div>
                   </div>
                   <div className='hidden sm:flex md:w-1/4 justify-center'>
-                    <div className='bg-white dark:bg-[#2a2a2a] p-2 rounded-xl shadow'>
+                    <div className='bg-white dark:bg-[#2a2a2a] p-2 rounded-xl shadow transform transition-all duration-300 hover:scale-110'>
                       <QrCode className='h-16 w-16 text-gray-800 dark:text-white' />
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div className='mt-8 p-4 bg-orange-100 dark:bg-[#1a1a1a] rounded-xl'>
+              <div className='mt-8 p-4 bg-orange-100 dark:bg-[#1a1a1a] rounded-xl transform transition-all duration-300 hover:shadow-inner'>
                 <h4 className='font-semibold text-gray-800 dark:text-white mb-2'>
                   Yêu cầu hệ thống:
                 </h4>
@@ -175,7 +165,7 @@ const DownloadApp = () => {
                 </ul>
               </div>
             </div>
-          </div>
+          </ScrollReveal>
         </div>
       </div>
     </section>
