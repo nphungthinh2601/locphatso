@@ -1,4 +1,4 @@
-import { QrCode, ArrowDown, Download } from 'lucide-react';
+import { QrCode, Download } from 'lucide-react';
 import ScrollReveal from './ScrollReveal';
 import FloatingElement from './FloatingElement';
 
@@ -53,11 +53,6 @@ const DownloadApp = () => {
                     className='h-[400px] w-auto'
                   />
                 </FloatingElement>
-              </div>
-              <div className='absolute -right-6 -bottom-6 bg-white dark:bg-[#121212] rounded-full p-3 shadow-lg'>
-                <div className='animate-bounce'>
-                  <ArrowDown className='h-8 w-8 text-orange-500 dark:text-[#ff3333]' />
-                </div>
               </div>
             </div>
           </ScrollReveal>
